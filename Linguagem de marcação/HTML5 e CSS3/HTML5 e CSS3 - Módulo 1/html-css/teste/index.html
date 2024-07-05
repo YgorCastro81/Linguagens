@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>teste</title>
+</head>
+<body>
+    <hr>
+    <h1>Imagem dinâmica</h1>
+    <hr>
+    <p>Tente abrir esse site em vários dispositivos diferentes ou simplesmente aumente e diminua o tamanho do seu navegador.</p>
+
+    <picture>
+        <source media="(max-width: 750px)" srcset="imagens/foto-pequeno.png">
+        <source media="(max-width: 1050px)" srcset="imagens/foto-medio.png">
+        <img src="imagens/foto-grande.png" alt="Imagem flexível">
+    </picture>
+
+    <hr>
+    <h1>Reproduzindo Áudio</h1>
+    <hr>
+    <p>Vamos aprender a reproduzir áudios em HTML5</p>
+
+    <audio id="audio" preload="metadata" controls loop autoplay>
+        <source src="musicas/RBD - Cerquita De Ti.mp3" type="audio/mp3">
+        <p>Infelizmente seu navegador não consegue reproduzir áudio. <a href="musicas/RBD - Cerquita De Ti.mp3">Clique aqui para baixar o arquivo MP3</a></p>
+    </audio>
+
+    <script>
+        // Inicia a reprodução do áudio automaticamente quando o DOM estiver pronto
+        document.addEventListener("DOMContentLoaded", function() {
+            var audio = document.getElementById("audio");
+            audio.play().catch(function(error) {
+                console.log("Reprodução automática foi bloqueada pelo navegador.", error);
+            });
+        });
+    </script>
+</body>
+</html>
